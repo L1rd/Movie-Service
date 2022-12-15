@@ -1,6 +1,7 @@
 export type INavbar = {
 	label: string;
-	pages: INavbarItem[];
+	isOpen: boolean;
+	options: INavbarItem[];
 };
 
 export type INavbarItem = {

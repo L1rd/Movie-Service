@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { LatestMovies } from './LatestMovies';
 import { PopularMovies } from './PopularMovies';
 
 export const Main: FC = () => (
@@ -8,13 +9,10 @@ export const Main: FC = () => (
 			sx={{
 				padding: '88px 40px',
 				background: 'linear-gradient(90deg, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%)',
-				marginBottom: '30px',
 			}}
 		>
-			<Typography variant="h1" color="primary.light">
-				Welcome
-			</Typography>
-			<Typography variant="h2" sx={{ marginBottom: '50px' }} color="primary.light">
+			<Typography variant="h1">Welcome</Typography>
+			<Typography variant="h2" sx={{ marginBottom: '50px' }}>
 				Millions of movies, TV shows and people to discover. Explore now.
 			</Typography>
 			<TextField
@@ -25,5 +23,6 @@ export const Main: FC = () => (
 			/>
 		</Box>
 		<PopularMovies />
+		<LatestMovies />
 	</Container>
 );
