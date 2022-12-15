@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.17",
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -39,7 +40,7 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore -c .eslintrc.json --max-warnings=0 --fix"
+    "*.{js,jsx,ts,tsx}": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore -c .eslintrc --max-warnings=0 --fix"
   },
   "browserslist": {
     "production": [
