@@ -60,7 +60,41 @@ export const theme = createTheme(palette, {
 		MuiAppBar: {
 			styleOverrides: {
 				root: {
+					'& .MuiToolbar': {
+						padding: '0px !important',
+					},
+					zIndex: 1500,
+					boxShadow: 'inherit',
 					backgroundColor: `${palette.palette.darkBlue} !important`,
+				},
+			},
+		},
+		MuiPopover: {
+			styleOverrides: {
+				paper: {
+					'& .MuiInputBase-root': {
+						'&:before': {
+							border: 'none',
+							content: 'none',
+						},
+						'&:after': {
+							border: 'none',
+						},
+					},
+					top: '64px !important',
+					left: '0 !important',
+					maxWidth: '100%',
+					borderRadius: '0px',
+				},
+			},
+		},
+		MuiList: {
+			styleOverrides: {
+				root: {
+					'& svg': {
+						marginRight: '10px',
+						fontSize: '20px',
+					},
 				},
 			},
 		},

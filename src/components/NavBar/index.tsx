@@ -21,9 +21,7 @@ export const NavBar: FC = () => {
 	return (
 		<>
 			<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-				<CustomIconButton size="large" sx={{ color: `${theme.palette.white}` }}>
-					<MenuIcon />
-				</CustomIconButton>
+				<CustomIconButton size="large" sx={{ color: `${theme.palette.white}` }} icon={<MenuIcon />} />
 				<Menu
 					id="basic-menu"
 					open={false}

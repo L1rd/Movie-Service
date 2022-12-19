@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import backgroundTrendingSection from 'assets/img/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg';
+import { FilmSection, MovieCard } from 'components/shared';
 import { LatestMovies } from './LatestMovies';
-import { PopularMovies } from './PopularMovies';
 
 export const Main: FC = () => (
 	<Container maxWidth="lg">
@@ -22,7 +23,27 @@ export const Main: FC = () => (
 				InputProps={{ endAdornment: <Button variant="gradient">Search</Button> }}
 			/>
 		</Box>
-		<PopularMovies />
+		<FilmSection title="What`s Popular" toggleButtonLeftLabel="On TV" toggleButtonRightLabel="In Theaters">
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+		</FilmSection>
 		<LatestMovies />
+		<FilmSection
+			styles={{
+				background: `url(${backgroundTrendingSection}) 50% 170px no-repeat`,
+			}}
+			title="Trending"
+			toggleButtonLeftLabel="Today"
+			toggleButtonRightLabel="This Week"
+		>
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
+		</FilmSection>
 	</Container>
 );

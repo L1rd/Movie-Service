@@ -1,15 +1,16 @@
 import { FC, MouseEvent, useState } from 'react';
 import { Bookmark, Favorite, Grade, List, MoreHoriz } from '@mui/icons-material';
 import { Card, CardContent, CardMedia, Menu, MenuItem, Typography, useTheme } from '@mui/material';
-import { CustomIconButton } from 'components/shared';
+import { CircularProgressWithLabel, CustomIconButton } from 'components/shared';
 
-interface MovieVideoCardProps {
+interface MovieCardProps {
 	title: string;
-	subTitle: string;
-	video: string;
+	date: string;
+	score: number;
+	img: string;
 }
 
-export const MovieVideoCard: FC<MovieVideoCardProps> = ({ title, subTitle, video }) => {
+export const MovieCard: FC<MovieCardProps> = ({ title, date, score, img }) => {
 	const theme = useTheme();
 
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -27,23 +28,24 @@ export const MovieVideoCard: FC<MovieVideoCardProps> = ({ title, subTitle, video
 	return (
 		<Card
 			sx={{
-				minWidth: '300px',
-				background: 'none',
-				textAlign: 'center',
+				minWidth: '150px',
 				position: 'relative',
 				boxShadow: 'none',
 				marginRight: '20px',
+				transition: '0.5s',
+				backgroundColor: 'inherit',
+				filter: `${open ? 'blur(4px) brightness(50%)' : 'none'}`,
 			}}
 		>
 			<CustomIconButton
 				sx={{
+					visibility: `${open ? 'hidden' : 'none'}`,
 					position: 'absolute',
 					top: '8px',
 					right: '8px',
 					background: `${theme.palette.white}`,
 					height: '24px',
 					width: '24px',
-					zIndex: '1',
 					transition: '0.4s',
 					'&:hover': {
 						backgroundColor: `${theme.palette.lightBlue}`,
@@ -84,26 +86,21 @@ export const MovieVideoCard: FC<MovieVideoCardProps> = ({ title, subTitle, video
 			</Menu>
 			<CardMedia
 				component="img"
-				height="168"
-				sx={{
-					position: 'relative',
-					background: `${theme.palette.lightGrey}`,
-					borderRadius: '8px',
-				}}
-				image={video}
+				height="225"
+				sx={{ background: `${theme.palette.lightGrey}`, borderRadius: '8px' }}
+				image={img}
 				alt={title}
 			/>
-			<CardContent sx={{ padding: '10px' }}>
+			<CircularProgressWithLabel value={score} sx={{ position: 'absolute', bottom: '75px', left: '10px' }} />
+			<CardContent sx={{ padding: '26px 0 20px 10px' }}>
 				<Typography
 					gutterBottom
-					variant="h5"
+					variant="h4"
 					sx={{ '&:hover': { color: `${theme.palette.lightBlue}`, cursor: 'pointer' } }}
 				>
 					{title}
 				</Typography>
-				<Typography variant="body1" sx={{ color: `${theme.palette.white}` }}>
-					{subTitle}
-				</Typography>
+				<Typography variant="body1">{date}</Typography>
 			</CardContent>
 		</Card>
 	);
