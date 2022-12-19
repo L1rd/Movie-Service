@@ -1,62 +1,83 @@
 import { createTheme } from '@mui/material';
 
-export const theme = createTheme({
+const palette = createTheme({
 	palette: {
-		primary: {
-			light: '#FFFFFF',
-			main: '#000000',
-		},
-		secondary: {
-			main: '#032541',
-		},
+		white: '#FFFFFF',
+		black: '#000000',
+		darkBlue: '#032541',
+		lightBlue: '#01B4E4',
+		lightGrey: '#d3d3d3',
+		turquoise: '#1ED5A9',
 	},
+});
+
+export const theme = createTheme(palette, {
 	typography: {
 		h1: {
 			fontFamily: 'inherit',
 			fontWeight: '700',
 			fontSize: '48px',
 			lineHeight: '48px',
+			color: `${palette.palette.white}`,
 		},
 		h2: {
 			fontFamily: 'inherit',
 			fontWeight: '600',
 			fontSize: '32px',
 			lineHeight: '40px',
+			color: `${palette.palette.white}`,
 		},
 		h3: {
 			fontFamily: 'inherit',
 			fontWeight: '600',
 			fontSize: '24px',
 			lineHeight: '30px',
+			color: `${palette.palette.black}`,
 		},
 		h4: {
 			fontFamily: 'inherit',
 			fontWeight: '700',
 			fontSize: '16px',
 			lineHeight: '20px',
+			color: `${palette.palette.black}`,
+		},
+		h5: {
+			fontFamily: 'inherit',
+			fontWeight: '600',
+			fontSize: '19.2px',
+			lineHeight: '24px',
+			color: `${palette.palette.white}`,
 		},
 		body1: {
 			fontFamily: 'inherit',
 			fontWeight: '400',
 			fontSize: '16px',
 			lineHeight: '20px',
-			color: 'rgba(0, 0, 0, 0.6)',
+			color: `${palette.palette.black}`,
 		},
 	},
 	components: {
 		MuiAppBar: {
 			styleOverrides: {
 				root: {
-					backgroundColor: '#032541 !important',
+					backgroundColor: `${palette.palette.darkBlue} !important`,
 				},
 			},
 		},
 		MuiToggleButtonGroup: {
 			styleOverrides: {
 				root: {
-					border: '1px solid #032541',
+					border: `1px solid ${palette.palette.darkBlue}`,
 					borderRadius: '30px',
 					height: '30px',
+					transition: '0.5s',
+					'.Mui-selected': {
+						backgroundColor: `${palette.palette.darkBlue} !important`,
+						borderRadius: '30px',
+						'& p': {
+							color: `${palette.palette.lightBlue} !important`,
+						},
+					},
 				},
 			},
 		},
@@ -65,23 +86,13 @@ export const theme = createTheme({
 				root: {
 					border: 'none',
 					textTransform: 'inherit',
-					color: '#032541',
-					'&:hover': {
-						borderRadius: '10px',
-					},
+					color: `${palette.palette.darkBlue}`,
 					'& p': {
 						fontFamily: 'inherit',
 						fontWeight: '600',
 						fontSize: '16px',
 						lineHeight: '20px',
-						color: '#032541',
-					},
-					'&.Mui-selected': {
-						backgroundColor: '#032541',
-						borderRadius: '30px',
-						'& p': {
-							color: '#01B4E4',
-						},
+						color: `${palette.palette.darkBlue}`,
 					},
 				},
 			},
@@ -96,12 +107,12 @@ export const theme = createTheme({
 						fontSize: '16px',
 						lineHeight: '24px',
 						textTransform: 'inherit',
-						borderBottom: '1px solid #032541',
+						borderBottom: `1px solid ${palette.palette.darkBlue}`,
 						padding: '6px 24px',
 						minWidth: '0',
 						transition: '0.3s',
 						'&:hover': {
-							borderColor: '#FFFF',
+							borderColor: `${palette.palette.white}`,
 						},
 					},
 				},
@@ -114,15 +125,15 @@ export const theme = createTheme({
 						fontSize: '16px',
 						lineHeight: '20px',
 						padding: '19px 26px',
-						color: '#FFFFFF',
+						color: `${palette.palette.white}`,
 						background: 'linear-gradient(90deg, #1ED5A9 0%, #01B4E4 100%)',
 						borderRadius: '30px',
 						transition: '0.3s',
-						border: '1px solid #01B4E4',
+						border: `1px solid ${palette.palette.lightBlue}`,
 						'&:hover': {
 							background: 'inherit',
-							color: '#01B4E4',
-							borderColor: '#01B4E4',
+							color: `${palette.palette.lightBlue}`,
+							borderColor: `${palette.palette.lightBlue}`,
 						},
 					},
 				},
@@ -134,33 +145,33 @@ export const theme = createTheme({
 					'& label': {
 						fontSize: '17.6px',
 						lineHeight: '22px',
-						color: '#757575',
+						color: `${palette.palette.lightGrey}`,
 						left: '5px',
 						top: '3px',
 					},
 					'& label.Mui-focused': {
 						fontSize: '17.6px',
 						top: '-10px',
-						color: '#FFFF',
+						color: `${palette.palette.white}`,
 					},
 					'& .MuiInputBase-root': {
 						paddingRight: '0',
 					},
 					'& .MuiOutlinedInput-root': {
 						borderRadius: '50px',
-						backgroundColor: '#FFFFFF',
+						backgroundColor: `${palette.palette.white}`,
 
 						'& fieldset': {
-							borderColor: '#ffff',
+							borderColor: `${palette.palette.lightGrey}`,
 							transition: '0.4s',
 						},
 						'&:hover fieldset': {
 							border: 'none',
-							boxShadow: '#ffff 0px 8px 24px',
+							boxShadow: `${palette.palette.lightGrey} 0px 8px 24px`,
 						},
 						'&.Mui-focused fieldset': {
 							border: 'none',
-							boxShadow: '#ffff 0px 8px 24px',
+							boxShadow: `${palette.palette.lightGrey} 0px 8px 24px`,
 						},
 					},
 				},

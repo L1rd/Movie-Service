@@ -3,7 +3,8 @@ import { INavbar } from 'utils/types';
 export const NAVBAR: INavbar[] = [
 	{
 		label: 'Movies',
-		pages: [
+		isOpen: false,
+		options: [
 			{ title: 'Popular', path: '/' },
 			{ title: 'Now playing', path: '/' },
 			{ title: 'Upcoming', path: '/' },
@@ -12,17 +13,19 @@ export const NAVBAR: INavbar[] = [
 	},
 	{
 		label: 'TV Shows',
-		pages: [
+		isOpen: false,
+		options: [
 			{ title: 'Popular', path: '/' },
 			{ title: 'Airing Today', path: '/' },
 			{ title: 'On Tv', path: '/' },
 			{ title: 'Top rated', path: '/' },
 		],
 	},
-	{ label: 'People', pages: [{ title: 'Popular People', path: '/' }] },
+	{ label: 'People', isOpen: false, options: [{ title: 'Popular People', path: '/' }] },
 	{
 		label: 'More',
-		pages: [
+		isOpen: false,
+		options: [
 			{ title: 'Discussions', path: '/' },
 			{ title: 'Leaderboard', path: '/' },
 			{ title: 'Support', path: '/' },
