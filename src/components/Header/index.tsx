@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { Add, Language, Search } from '@mui/icons-material';
+import { Add, Language } from '@mui/icons-material';
 import { AppBar, Box, Button, Container, Slide, Toolbar, Typography, useScrollTrigger, useTheme } from '@mui/material';
 import logo from 'assets/img/logo.svg';
 import { NavBar } from 'components';
+import { SearchSection } from 'components/Search';
 import { CustomIconButton } from 'components/shared';
 
 export const Header: FC = () => {
@@ -25,18 +26,18 @@ export const Header: FC = () => {
 							<img src={logo} alt="logo" style={{ height: '20px', marginRight: '8px' }} />
 						</Typography>
 						<Box sx={{ display: 'flex', alignItems: 'center' }}>
-							<CustomIconButton sx={{ marginRight: '22px', color: `${theme.palette.white}` }}>
-								<Add />
-							</CustomIconButton>
-							<CustomIconButton sx={{ marginRight: '14px', color: `${theme.palette.white}` }}>
-								<Language />
-							</CustomIconButton>
+							<CustomIconButton
+								sx={{ marginRight: '22px', color: `${theme.palette.white}` }}
+								icon={<Add />}
+							/>
+							<CustomIconButton
+								sx={{ marginRight: '14px', color: `${theme.palette.white}` }}
+								icon={<Language />}
+							/>
 							<Button variant="navItem">Login</Button>
 							<Button variant="navItem">Join TMDB</Button>
-							<CustomIconButton sx={{ color: `${theme.palette.lightBlue}`, marginLeft: '2px' }}>
-								<Search />
-							</CustomIconButton>
 						</Box>
+						<SearchSection trigger={trigger} />
 					</Toolbar>
 				</Container>
 			</AppBar>

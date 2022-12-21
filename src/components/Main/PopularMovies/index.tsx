@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Box, ToggleButton, ToggleButtonGroup, Typography, useTheme } from '@mui/material';
-import { MovieCard } from 'components';
 
 export const PopularMovies: FC = () => {
 	const theme = useTheme();
@@ -41,13 +40,7 @@ export const PopularMovies: FC = () => {
 					padding: '20px 0 20px 0',
 					overflowX: 'scroll',
 				}}
-			>
-				<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
-				<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
-				<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
-				<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
-				<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
-			</Box>
+			/>
 		</Box>
 	);
 };
