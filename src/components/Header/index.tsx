@@ -16,7 +16,7 @@ export const Header: FC = () => {
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
 			<AppBar>
-				<Container maxWidth="lg" sx={{ position: 'relative' }}>
+				<Container maxWidth={false} sx={{ maxWidth: '1300px', position: 'relative' }}>
 					<Toolbar>
 						<Typography sx={{ display: { xs: 'none', md: 'flex' } }}>
 							<img src={logo} alt="logo" style={{ height: '20px', marginRight: '8px' }} />
