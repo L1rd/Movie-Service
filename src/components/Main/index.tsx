@@ -4,6 +4,7 @@ import backgroundTrendingSection from 'assets/img/trandingSectionBackground.svg'
 import { FilmSection, MovieCard } from 'components/shared';
 import { Banner } from './Banner';
 import { LatestMovies } from './LatestMovies';
+import { Leaderboard } from './Leaderboard';
 
 export const Main: FC = () => (
 	<Container maxWidth={false} sx={{ maxWidth: '1300px' }}>
@@ -47,5 +48,6 @@ export const Main: FC = () => (
 			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
 		</FilmSection>
 		<Banner />
+		<Leaderboard />
 	</Container>
 );

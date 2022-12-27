@@ -77,6 +77,15 @@ export const theme = createTheme(palette, {
 				},
 			},
 		},
+		MuiLinearProgress: {
+			styleOverrides: {
+				root: {
+					backgroundColor: 'inherit',
+					borderRadius: '4px',
+					height: '8px',
+				},
+			},
+		},
 		MuiList: {
 			styleOverrides: {
 				root: {
