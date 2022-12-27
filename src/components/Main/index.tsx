@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
-import backgroundTrendingSection from 'assets/img/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg';
+import backgroundTrendingSection from 'assets/img/trandingSectionBackground.svg';
 import { FilmSection, MovieCard } from 'components/shared';
+import { Banner } from './Banner';
 import { LatestMovies } from './LatestMovies';
 
 export const Main: FC = () => (
-	<Container maxWidth="lg">
+	<Container maxWidth={false} sx={{ maxWidth: '1300px' }}>
 		<Box
 			sx={{
 				padding: '88px 40px',
@@ -45,5 +46,6 @@ export const Main: FC = () => (
 			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
 			<MovieCard title="Wednesday" date="Nov 23, 2022" score={85} img="/" />
 		</FilmSection>
+		<Banner />
 	</Container>
 );

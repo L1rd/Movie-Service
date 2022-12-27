@@ -31,7 +31,23 @@ export const SearchSection: FC<{ trigger: boolean }> = ({ trigger }) => {
 			<Popover
 				anchorEl={anchorEl}
 				open={open}
-				sx={{ '& .MuiPopover-paper': { transition: '0.5s', top: trigger ? '0 !important' : 'inherit' } }}
+				sx={{
+					'& .MuiPopover-paper': {
+						'& .MuiInputBase-root': {
+							'&:before': {
+								border: 'none',
+								content: 'none',
+							},
+							'&:after': {
+								border: 'none',
+							},
+						},
+						top: trigger ? '0 !important' : '64px !important',
+						left: '0 !important',
+						maxWidth: '100%',
+						borderRadius: '0px',
+					},
+				}}
 				anchorOrigin={{
 					vertical: 'bottom',
 					horizontal: 'left',
@@ -45,7 +61,7 @@ export const SearchSection: FC<{ trigger: boolean }> = ({ trigger }) => {
 						alignItems: 'center',
 					}}
 				>
-					<Container maxWidth="lg" sx={{}}>
+					<Container maxWidth={false} sx={{ maxWidth: '1300px' }}>
 						<TextField
 							variant="standard"
 							value={value}

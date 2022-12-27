@@ -1,22 +1,13 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box, Button, Menu, MenuItem, Typography, useTheme } from '@mui/material';
+import { Box, Menu, MenuItem, Typography, useTheme } from '@mui/material';
 import { CustomIconButton } from 'components/shared';
 import { NAVBAR } from 'utils/consts';
-import { INavbar, INavbarItem } from 'utils/types';
+import { INavbar } from 'utils/types';
+import { NavBarItem } from './NavBarItem';
 
 export const NavBar: FC = () => {
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
 	const theme = useTheme();
-
-	const handleOpenMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleCloseMenu = () => {
-		setAnchorEl(null);
-	};
 
 	return (
 		<>
@@ -47,38 +38,7 @@ export const NavBar: FC = () => {
 			</Box>
 			<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 				{NAVBAR.map((item: INavbar) => (
-					<>
-						<Button
-							key={item.label}
-							variant="navItem"
-							onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleOpenMenu(e)}
-						>
-							{item.label}
-						</Button>
-						<Menu
-							open={false}
-							onClose={() => handleCloseMenu()}
-							id="basic-menu"
-							anchorEl={anchorEl}
-							anchorOrigin={{
-								vertical: 'bottom',
-								horizontal: 'left',
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: 'top',
-								horizontal: 'left',
-							}}
-							sx={{
-								display: 'block',
-								height: '300px',
-							}}
-						>
-							{item.options.map((item: INavbarItem) => (
-								<MenuItem>{item.title}</MenuItem>
-							))}
-						</Menu>
-					</>
+					<NavBarItem item={item} />
 				))}
 			</Box>
 		</>
