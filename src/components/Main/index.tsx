@@ -7,7 +7,7 @@ import { LatestMovies } from './LatestMovies';
 import { Leaderboard } from './Leaderboard';
 
 export const Main: FC = () => (
-	<Container maxWidth={false} sx={{ maxWidth: '1300px' }}>
+	<Container maxWidth={false} sx={{ maxWidth: '1300px', marginTop: '64px' }}>
 		<Box
 			sx={{
 				padding: '88px 40px',

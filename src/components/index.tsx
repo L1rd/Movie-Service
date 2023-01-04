@@ -1,3 +1,4 @@
+export * from './CatalogPage';
 export * from './Footer';
 export * from './Header';
 export * from './Main';

@@ -7,6 +7,7 @@ declare module '@mui/material/Button' {
 		gradient: true;
 		bannerButton: true;
 		footerButton: true;
+		catalogButton: true;
 	}
 }
 
@@ -18,5 +19,6 @@ declare module '@mui/material/styles' {
 		lightBlue: CSSProperties['color'];
 		lightGrey: CSSProperties['color'];
 		turquoise: CSSProperties['color'];
+		purpleGradient: CSSProperties['color'];
 	}
 }

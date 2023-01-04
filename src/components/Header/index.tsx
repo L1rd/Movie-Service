@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Add, Language } from '@mui/icons-material';
 import { AppBar, Box, Button, Container, Slide, Toolbar, Typography, useScrollTrigger, useTheme } from '@mui/material';
 import logo from 'assets/img/logo.svg';
@@ -13,17 +14,27 @@ export const Header: FC = () => {
 		target: window,
 	});
 
+	const navigate = useNavigate();
+
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
 			<AppBar>
 				<Container maxWidth={false} sx={{ maxWidth: '1300px', position: 'relative' }}>
 					<Toolbar>
-						<Typography sx={{ display: { xs: 'none', md: 'flex' } }}>
-							<img src={logo} alt="logo" style={{ height: '20px', marginRight: '8px' }} />
+						<Typography sx={{ display: { xs: 'none', md: 'flex' } }} onClick={() => navigate('/')}>
+							<img
+								src={logo}
+								alt="logo"
+								style={{ height: '20px', marginRight: '8px', cursor: 'pointer' }}
+							/>
 						</Typography>
 						<NavBar />
-						<Typography sx={{ display: { xs: 'flex', md: 'none' } }}>
-							<img src={logo} alt="logo" style={{ height: '20px', marginRight: '8px' }} />
+						<Typography sx={{ display: { xs: 'flex', md: 'none' } }} onClick={() => navigate('/')}>
+							<img
+								src={logo}
+								alt="logo"
+								style={{ height: '20px', marginRight: '8px', cursor: 'pointer' }}
+							/>
 						</Typography>
 						<Box sx={{ display: 'flex', alignItems: 'center' }}>
 							<CustomIconButton
