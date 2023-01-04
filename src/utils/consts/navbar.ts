@@ -5,7 +5,7 @@ export const NAVBAR: INavbar[] = [
 		label: 'Movies',
 		isOpen: false,
 		options: [
-			{ title: 'Popular', path: '/' },
+			{ title: 'Popular', path: '/CatalogPage' },
 			{ title: 'Now playing', path: '/' },
 			{ title: 'Upcoming', path: '/' },
 			{ title: 'Top rated', path: '/' },

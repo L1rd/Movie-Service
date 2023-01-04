@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { INavbar, INavbarItem } from 'utils/types';
 
@@ -12,6 +13,8 @@ export const NavBarItem: FC<{ item: INavbar }> = ({ item }) => {
 	const handleCloseMenu = () => {
 		setAnchorEl(null);
 	};
+
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -39,7 +42,7 @@ export const NavBarItem: FC<{ item: INavbar }> = ({ item }) => {
 				}}
 			>
 				{item.options.map((item: INavbarItem) => (
-					<MenuItem>{item.title}</MenuItem>
+					<MenuItem onClick={() => navigate(item.path)}>{item.title}</MenuItem>
 				))}
 			</Menu>
 		</>

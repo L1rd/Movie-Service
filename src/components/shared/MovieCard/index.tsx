@@ -8,9 +8,10 @@ interface MovieCardProps {
 	date: string;
 	score: number;
 	img: string;
+	sx?: object;
 }
 
-export const MovieCard: FC<MovieCardProps> = ({ title, date, score, img }) => {
+export const MovieCard: FC<MovieCardProps> = ({ title, date, score, img, sx }) => {
 	const theme = useTheme();
 
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -28,13 +29,15 @@ export const MovieCard: FC<MovieCardProps> = ({ title, date, score, img }) => {
 	return (
 		<Card
 			sx={{
-				minWidth: '150px',
+				width: '150px',
 				position: 'relative',
 				boxShadow: 'none',
 				marginRight: '20px',
 				transition: '0.5s',
 				backgroundColor: 'inherit',
+				borderRadius: '8px',
 				filter: `${open ? 'blur(4px) brightness(50%)' : 'none'}`,
+				...sx,
 			}}
 		>
 			<CustomIconButton
@@ -91,12 +94,14 @@ export const MovieCard: FC<MovieCardProps> = ({ title, date, score, img }) => {
 				image={img}
 				alt={title}
 			/>
-			<CircularProgressWithLabel value={score} sx={{ position: 'absolute', bottom: '75px', left: '10px' }} />
+			<CircularProgressWithLabel value={score} sx={{ position: 'absolute', top: '205px', left: '10px' }} />
 			<CardContent sx={{ padding: '26px 0 20px 10px' }}>
 				<Typography
 					gutterBottom
 					variant="h4"
-					sx={{ '&:hover': { color: `${theme.palette.lightBlue}`, cursor: 'pointer' } }}
+					sx={{
+						'&:hover': { color: `${theme.palette.lightBlue}`, cursor: 'pointer' },
+					}}
 				>
 					{title}
 				</Typography>

@@ -9,6 +9,7 @@ const palette = createTheme({
 		lightGrey: '#d3d3d3',
 		turquoise: '#1ED5A9',
 		purple: '#805BE7',
+		purpleGradient: 'radial-gradient(50% 50% at 50% 50%, #031D33 0%, #032541 70%)',
 	},
 });
 
@@ -49,6 +50,13 @@ export const theme = createTheme(palette, {
 			lineHeight: '24px',
 			color: `${palette.palette.white}`,
 		},
+		h6: {
+			fontFamily: 'inherit',
+			fontWeight: '300',
+			fontSize: '16px',
+			lineHeight: '20px',
+			color: `${palette.palette.black}`,
+		},
 		body1: {
 			fontFamily: 'inherit',
 			fontWeight: '400',
@@ -68,12 +76,26 @@ export const theme = createTheme(palette, {
 		MuiAppBar: {
 			styleOverrides: {
 				root: {
-					'& .MuiToolbar': {
+					'& .MuiToolbar-root': {
 						padding: '0px !important',
 					},
 					zIndex: 1500,
 					boxShadow: 'inherit',
 					backgroundColor: `${palette.palette.darkBlue} !important`,
+				},
+			},
+		},
+		MuiAccordion: {
+			styleOverrides: {
+				root: {
+					'&::before': {
+						content: 'none',
+					},
+					boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
+					borderRadius: '8px',
+					'&.Mui-expanded .MuiAccordionSummary-root': {
+						borderBottom: '1px solid #EEEEEE',
+					},
 				},
 			},
 		},
@@ -207,6 +229,26 @@ export const theme = createTheme(palette, {
 							background: 'inherit',
 							color: `${palette.palette.white}`,
 							borderColor: `${palette.palette.white}`,
+						},
+					},
+				},
+				{
+					props: { variant: 'catalogButton' },
+					style: {
+						fontFamily: 'inherit',
+						textTransform: 'inherit',
+						fontWeight: '600',
+						fontSize: '19.2px',
+						lineHeight: '19px',
+						padding: '10px 100px',
+						color: `rgba(0, 0, 0, 0.5)`,
+						border: `2px solid ${palette.palette.white}`,
+						background: `rgba(228, 228, 228, 0.7)`,
+						borderRadius: '20px',
+						transition: '0.3s',
+						'&:hover': {
+							background: `${palette.palette.white}`,
+							borderColor: `${palette.palette.lightGrey}`,
 						},
 					},
 				},
