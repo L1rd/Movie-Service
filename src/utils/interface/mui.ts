@@ -6,6 +6,7 @@ declare module '@mui/material/Button' {
 		navItem: true;
 		gradient: true;
 		bannerButton: true;
+		footerButton: true;
 	}
 }
 

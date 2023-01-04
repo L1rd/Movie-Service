@@ -190,6 +190,26 @@ export const theme = createTheme(palette, {
 						},
 					},
 				},
+				{
+					props: { variant: 'footerButton' },
+					style: {
+						fontFamily: 'inherit',
+						fontWeight: '700',
+						fontSize: '18.72px',
+						lineHeight: '24px',
+						padding: '10px 18px',
+						color: `${palette.palette.lightBlue}`,
+						background: `${palette.palette.white}`,
+						borderRadius: '5px',
+						transition: '0.3s',
+						border: `2px solid ${palette.palette.white}`,
+						'&:hover': {
+							background: 'inherit',
+							color: `${palette.palette.white}`,
+							borderColor: `${palette.palette.white}`,
+						},
+					},
+				},
 			],
 		},
 		MuiTextField: {
